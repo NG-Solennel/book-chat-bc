@@ -7,6 +7,8 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
+import java.util.Optional;
+
 @Service
 @RequiredArgsConstructor
 public class UserService {
@@ -14,10 +16,13 @@ public class UserService {
     private final UserRepository userRepository;
 
     public UserResponse getUserByEmail (String email){
-        User user = userRepository.findByEmail(email).orElseThrow(() -> new UsernameNotFoundException("User not found"));
-        return UserResponse.builder().firstName(user.getFirstName())
-                .lastName(user.getLastName())
-                .email(user.getEmail())
-                .role(user.getRole()).build();
+       Optional<User> user = userRepository.findByEmail(email);
+       if(user.isPresent()){
+        return UserResponse.builder().firstName(user.get().getFirstName())
+                .lastName(user.get().getLastName())
+                .email(user.get().getEmail())
+                .role(user.get().getRole()).build();
+       }
+       return null;
     }
 }

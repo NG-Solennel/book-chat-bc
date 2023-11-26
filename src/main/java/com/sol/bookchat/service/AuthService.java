@@ -31,6 +31,8 @@ public class AuthService {
                 .role(Role.USER)
                 .password(passwordEncoder.encode(request.getPassword()))
                 .build();
+
+
         UserResponse exists = userService.getUserByEmail(request.getEmail());
         if(exists != null){
             return AuthResponse.builder().token("409").build();
