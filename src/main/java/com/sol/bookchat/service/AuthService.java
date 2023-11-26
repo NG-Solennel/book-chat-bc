@@ -3,6 +3,7 @@ package com.sol.bookchat.service;
 import com.sol.bookchat.dto.AuthRequest;
 import com.sol.bookchat.dto.AuthResponse;
 import com.sol.bookchat.dto.RegisterRequest;
+import com.sol.bookchat.dto.UserResponse;
 import com.sol.bookchat.model.Role;
 import com.sol.bookchat.model.User;
 import com.sol.bookchat.repository.UserRepository;
@@ -20,6 +21,7 @@ public class AuthService {
     private final UserRepository userRepo;
     private final JwtService jwtService;
     private final PasswordEncoder passwordEncoder;
+    private final UserService userService;
     private final AuthenticationManager authenticationManager;
     public AuthResponse register(RegisterRequest request) {
         User user = User.builder()
@@ -29,8 +31,12 @@ public class AuthService {
                 .role(Role.USER)
                 .password(passwordEncoder.encode(request.getPassword()))
                 .build();
+        UserResponse exists = userService.getUserByEmail(request.getEmail());
+        if(exists != null){
+            return AuthResponse.builder().token("409").build();
+        }
         userRepo.save(user);
-        System.out.println("Email ======"+user.getEmail());
+
         String jwtToken = jwtService.generateToken(user);
         return AuthResponse.builder().token(jwtToken).build();
     }
