@@ -14,7 +14,7 @@
 	<name>bookchat</name>
 	<description>Book chat appointment app</description>
 	<properties>
-		<java.version>21</java.version>
+		<java.version>20</java.version>
 	</properties>
 	<dependencies>
 		<dependency>
