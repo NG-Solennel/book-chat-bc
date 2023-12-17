@@ -23,5 +23,5 @@ public class FavoriteDto {
     @NotEmpty
     private String poster;
     @NotEmpty
-    private Long userId;
+    private String userId;
 }

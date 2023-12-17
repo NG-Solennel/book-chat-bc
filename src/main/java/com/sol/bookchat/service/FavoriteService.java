@@ -25,18 +25,23 @@ public class FavoriteService {
  private final UserRepository userRepo;
  private final UserAuthenticationProvider userAuthenticationProvider;
  public void saveFavorite(FavoriteDto fav){
-     Optional<User> user = userRepo.findById(fav.getUserId());
-        if(!user.isPresent()){
-            throw new AppException("User not found",HttpStatus.NOT_FOUND);
-        }
+     Boolean exists = false;
+     User user = userRepo.findById(Long.parseLong(fav.getUserId())).orElseThrow(()->new AppException("User not found",HttpStatus.NOT_FOUND));
+
          Favorite favorite = Favorite.builder().imdbID(fav.getImdbID()).Year(fav.getYear()).Title(fav.getTitle())
-                 .Type(EFilm.valueOf(fav.getType())).Poster(fav.getPoster())
-                 .user(user.get()).build();
-         Boolean exists = user.get().getFavorites().contains(favorite);
+                 .Type(EFilm.valueOf(fav.getType())).Poster(fav.getPoster()).isWatched(false)
+                 .user(user).build();
+         List<Favorite> userFavs = user.getFavorites();
+         for(Favorite userFav : userFavs){
+             if(userFav.getImdbID()== fav.getImdbID()){
+                 exists = true;
+             }
+         }
          if(exists){
              throw new AppException("Already exists",HttpStatus.CONFLICT);
-         }
+         }else{
          favRepo.save(favorite);
+         }
  }
  public List<Favorite> getFavorites(HttpServletRequest req){
      String authorizationHeader = req.getHeader("Authorization");
@@ -52,4 +57,16 @@ public class FavoriteService {
      }
      return List.of();
  }
+
+    public void removeFavorite(String id) {
+     favRepo.deleteById(Long.parseLong(id));
+    }
+
+    public void toggleIsWatched(String id, boolean isWatched) {
+     Favorite fav = favRepo.findById(Long.parseLong(id)).orElseThrow(()->new AppException("ID Not found", HttpStatus.NOT_FOUND));
+     fav.setIsWatched(isWatched);
+        System.out.println(isWatched);
+        System.out.println(fav.getIsWatched());
+     favRepo.save(fav);
+    }
 }

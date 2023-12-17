@@ -12,7 +12,7 @@ import lombok.NoArgsConstructor;
 @Builder
 @Data
 @Entity
-@Table(name = "favorites")
+@Table(name = "favorites",uniqueConstraints = @UniqueConstraint(columnNames = {"user_id","imdbID"}))
 public class Favorite {
     @Id
     @Column(name = "Id")
@@ -26,4 +26,6 @@ public class Favorite {
     @ManyToOne
     @JsonBackReference
     private User user;
+    @Column(nullable = false)
+    private Boolean isWatched;
 }

@@ -1,9 +1,12 @@
 D:\JAVA\Web-Tech\final-Project\bookchat-bc\src\main\java\com\sol\bookchat\dto\UserDto.java
+D:\JAVA\Web-Tech\final-Project\bookchat-bc\src\main\java\com\sol\bookchat\advice\GlobalExceptionHandler.java
 D:\JAVA\Web-Tech\final-Project\bookchat-bc\src\main\java\com\sol\bookchat\model\Role.java
 D:\JAVA\Web-Tech\final-Project\bookchat-bc\src\main\java\com\sol\bookchat\config\PasswordConfig.java
 D:\JAVA\Web-Tech\final-Project\bookchat-bc\src\main\java\com\sol\bookchat\config\JwtAuthFilter.java
 D:\JAVA\Web-Tech\final-Project\bookchat-bc\src\main\java\com\sol\bookchat\repository\UserRepository.java
 D:\JAVA\Web-Tech\final-Project\bookchat-bc\src\main\java\com\sol\bookchat\dto\SignUpDto.java
+D:\JAVA\Web-Tech\final-Project\bookchat-bc\src\main\java\com\sol\bookchat\dto\MailDto.java
+D:\JAVA\Web-Tech\final-Project\bookchat-bc\src\main\java\com\sol\bookchat\dto\Response.java
 D:\JAVA\Web-Tech\final-Project\bookchat-bc\src\main\java\com\sol\bookchat\service\FavoriteService.java
 D:\JAVA\Web-Tech\final-Project\bookchat-bc\src\main\java\com\sol\bookchat\serialize\Config.java
 D:\JAVA\Web-Tech\final-Project\bookchat-bc\src\main\java\com\sol\bookchat\BookchatApplication.java
@@ -12,10 +15,13 @@ D:\JAVA\Web-Tech\final-Project\bookchat-bc\src\main\java\com\sol\bookchat\dto\Er
 D:\JAVA\Web-Tech\final-Project\bookchat-bc\src\main\java\com\sol\bookchat\config\UserAuthenticationProvider.java
 D:\JAVA\Web-Tech\final-Project\bookchat-bc\src\main\java\com\sol\bookchat\config\WebConfig.java
 D:\JAVA\Web-Tech\final-Project\bookchat-bc\src\main\java\com\sol\bookchat\config\SecurityConfig.java
+D:\JAVA\Web-Tech\final-Project\bookchat-bc\src\main\java\com\sol\bookchat\dto\IsWatchedDto.java
 D:\JAVA\Web-Tech\final-Project\bookchat-bc\src\main\java\com\sol\bookchat\serialize\FavoriteSerializer.java
+D:\JAVA\Web-Tech\final-Project\bookchat-bc\src\main\java\com\sol\bookchat\controller\MailController.java
 D:\JAVA\Web-Tech\final-Project\bookchat-bc\src\main\java\com\sol\bookchat\mappers\UserMapper.java
 D:\JAVA\Web-Tech\final-Project\bookchat-bc\src\main\java\com\sol\bookchat\repository\FavoriteRepository.java
 D:\JAVA\Web-Tech\final-Project\bookchat-bc\src\main\java\com\sol\bookchat\serialize\UserSerializer.java
+D:\JAVA\Web-Tech\final-Project\bookchat-bc\src\main\java\com\sol\bookchat\service\MailService.java
 D:\JAVA\Web-Tech\final-Project\bookchat-bc\src\main\java\com\sol\bookchat\config\RestExceptionHandler.java
 D:\JAVA\Web-Tech\final-Project\bookchat-bc\src\main\java\com\sol\bookchat\controller\MessagesController.java
 D:\JAVA\Web-Tech\final-Project\bookchat-bc\src\main\java\com\sol\bookchat\controller\AuthController.java
