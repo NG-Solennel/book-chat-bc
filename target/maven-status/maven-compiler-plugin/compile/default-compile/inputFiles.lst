@@ -23,7 +23,6 @@ D:\JAVA\Web-Tech\final-Project\bookchat-bc\src\main\java\com\sol\bookchat\reposi
 D:\JAVA\Web-Tech\final-Project\bookchat-bc\src\main\java\com\sol\bookchat\serialize\UserSerializer.java
 D:\JAVA\Web-Tech\final-Project\bookchat-bc\src\main\java\com\sol\bookchat\service\MailService.java
 D:\JAVA\Web-Tech\final-Project\bookchat-bc\src\main\java\com\sol\bookchat\config\RestExceptionHandler.java
-D:\JAVA\Web-Tech\final-Project\bookchat-bc\src\main\java\com\sol\bookchat\controller\MessagesController.java
 D:\JAVA\Web-Tech\final-Project\bookchat-bc\src\main\java\com\sol\bookchat\controller\AuthController.java
 D:\JAVA\Web-Tech\final-Project\bookchat-bc\src\main\java\com\sol\bookchat\dto\FavoriteDto.java
 D:\JAVA\Web-Tech\final-Project\bookchat-bc\src\main\java\com\sol\bookchat\service\UserService.java

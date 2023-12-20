@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: com.sol.bookchat.BookchatApplicationTests
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 54.883 s - in com.sol.bookchat.BookchatApplicationTests
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 43.749 s - in com.sol.bookchat.BookchatApplicationTests
